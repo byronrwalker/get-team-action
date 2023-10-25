@@ -1,0 +1,24 @@
+author: "ByronRWalker"
+name: "Get GitHub Team"
+description: "Retrieve a GitHub team including team members"
+branding:
+  icon: "users"
+  color: "blue"
+inputs:
+  token: 
+    description: "GitHub token"
+    required: true
+    default: ${{ github.token }}
+  org:
+    description: "Name of the organization"
+    required: true
+    default: ${{ github.repository_owner }}
+  team_slug:
+    description: "Name of the team"
+    required: true
+outputs:
+  team:
+    description: "The GitHub Team Object"
+runs:
+  using: "node20"
+  main: "dist/index.js"
